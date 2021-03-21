@@ -1,12 +1,11 @@
 package com.javacircle.unit.asserts;
 
-import static org.junit.Assert.assertThrows;
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class PhoneTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class PhoneTest {
 
 	@Test
 	void ValidPhoneNumberIs10Digit(){
@@ -23,19 +22,18 @@ public class PhoneTest {
 	}
 
 
-
 	@Test
 	void InvalidPhoneNumberValidThrowException(){
-		Long phoneNum = 12356l;
-		Exception exception =  assertThrows(Exception.class, ()->new  Phone(phoneNum));
+		long phoneNum = 12356L;
+		 assertThrows(Exception.class, ()->new  Phone(phoneNum));
 	}
 	
 	
 	@Test
 	@DisplayName("Custom test name containing spaces")
-	public void wrongInput() {
+	 void wrongInput() {
 		Phone  phone =  new Phone();
-		Long phoneNum = 0l;
+		long phoneNum = 0L;
 	    assertThrows(Exception.class,()->{phone.PhoneThrowsExample(phoneNum);} );
 	}
 
